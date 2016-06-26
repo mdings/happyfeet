@@ -1,4 +1,0 @@
----
-id: treatments
-title: treatments
----
