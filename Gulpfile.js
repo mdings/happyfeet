@@ -6,6 +6,7 @@ var gulp = require('gulp'),
   fontMagician = require('postcss-font-magician'),
   pxtorem = require('postcss-pxtorem'),
   concat = require('gulp-concat'),
+  babel = require('gulp-babel'),
   ghPages = require('gulp-gh-pages'),
   sourcemaps = require('gulp-sourcemaps');
 
@@ -34,6 +35,9 @@ gulp.task('scripts', function() {
     'static/js/main.js'
   ])
   .pipe(concat('main.js'))
+  .pipe(babel({
+    presets: ['es2015']
+  }))
   .pipe(gulp.dest('build/js/'))
   .pipe(browserSync.stream());
 });
