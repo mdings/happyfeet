@@ -1,0 +1,11 @@
+each block in blocks
+    if (block.id == 'contact')
+        div.row.small-collapse
+
+            div.columns.small-12.medium-6.medium-push-6
+                section.block.block--intro
+                    h1.section__title= block.title
+                    div.section__content!= block.contents
+            div.columns.small-12.medium-6.medium-pull-6
+                div.block__image
+                    img(src="img/"+block.image)

@@ -1,0 +1,18 @@
+each block in blocks
+	if (block.id == 'treatments')
+		div.block.block--treatments
+			div.row.is-offset-color.small-collapse
+				div.columns.small-12.medium-3(data-sticky-container)
+					aside.sticky(data-sticky data-margin-top="0")
+						h2 Behandelingen
+						ul.treatments__list
+							each t in treatments
+								li
+									a(href="#"+t.title.toLowerCase().replace(/ /g, '-'))= t.title
+				div.columns.small-12.medium-9
+					div.swiper-container
+						div.swiper-wrapper
+							each t, i in treatments
+								section.treatment.swiper-slide(data-hash=t.title.toLowerCase().replace(/ /g, '-'))
+									h3.treatment__title= t.title
+									div.treatment__content!= t.contents
